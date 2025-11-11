@@ -6,12 +6,13 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:20:00 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/10 20:21:37 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:34:06 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }
-
