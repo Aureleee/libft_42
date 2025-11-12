@@ -6,36 +6,32 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:46:02 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/11 22:27:05 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:31:28 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
+	size_t	sub_len;
+	size_t	s_len;
 	char	*subs;
-	size_t	new_len;
 
-	if (!s)
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+	{
+		subs = ft_calloc(1, 1);
+		if (!subs)
+			return (NULL);
+		return (subs);
+	}
+	sub_len = s_len - start;
+	if (sub_len > len)
+		sub_len = len;
+	subs = ft_calloc(sub_len + 1, 1);
+	if (!subs)
 		return (NULL);
-	if (ft_strlen(s) < start)
-	{
-		subs = ft_calloc(1, sizeof(char));
-		if (!subs)
-			return (NULL);
-	}
-	else
-	{
-		new_len = ft_strlen(s + start);
-		if (new_len > len)
-			new_len = len;
-		subs = malloc(new_len + 1);
-		if (!subs)
-			return (NULL);
-		subs[new_len] = '\0';
-		while (new_len-- > 0)
-			subs[new_len] = s[start + new_len];
-	}
+	ft_memcpy(subs, s + start, sub_len);
 	return (subs);
 }

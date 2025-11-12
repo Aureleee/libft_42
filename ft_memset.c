@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:21:54 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/11 23:45:51 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:21:44 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-1
