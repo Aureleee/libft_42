@@ -6,7 +6,11 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:45:45 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/11 21:45:46 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/13 22:45:27 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+// here is the correct implementation of ft_split function
 

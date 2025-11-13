@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:20:50 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/10 21:50:53 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/13 22:20:06 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,21 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+
+/* // test main for ft_memcpy
+#include <stdio.h>
+#include <string.h>
+#include "libft.h"
+
+int main(void)
+{
+	char dst1[16];
+	char dst2[16];
+	const char *src = "HelloWorld";
+	ft_memcpy(dst1, src, 11);
+	memcpy(dst2, src, 11);
+	printf("ft_memcpy: dst=\"%s\" | memcpy: dst=\"%s\"\n", dst1, dst2);
+	return 0;
+} */
+
