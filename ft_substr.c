@@ -6,32 +6,38 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:46:02 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/12 12:31:28 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/13 11:56:20 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_utils(void)
 {
-	size_t	sub_len;
-	size_t	s_len;
-	char	*subs;
-
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-	{
-		subs = ft_calloc(1, 1);
-		if (!subs)
-			return (NULL);
-		return (subs);
-	}
-	sub_len = s_len - start;
-	if (sub_len > len)
-		sub_len = len;
-	subs = ft_calloc(sub_len + 1, 1);
-	if (!subs)
+	substr = malloc(1);
+	if (!substr)
 		return (NULL);
-	ft_memcpy(subs, s + start, sub_len);
-	return (subs);
+	*substr = 0;
+	return (substr);
+}
+char	*ft_substr(const char *str, unsigned int start, size_t len)
+{
+	size_t	len_str;
+	char	*substr;
+	size_t	copy_len;
+
+	if (!str)
+		return (NULL);
+	len_str = ft_strlen(str);
+	if (start >= len_str)
+		return (ft_utils());
+	copy_len = len_str - start;
+	if (copy_len > len)
+		len = copy_len;
+	substr = malloc(copy_len + 1);
+	if (!substr)
+		return (NULL);
+	ft_memecpy(substr, str + start, copy_len);
+	substr[copy_len] = '\0';
+	return (substr);
 }
