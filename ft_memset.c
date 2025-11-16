@@ -6,13 +6,11 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:21:54 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/12 10:21:44 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/16 21:48:56 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
 
 void	*ft_memset(void *b, int c, size_t len)
 {

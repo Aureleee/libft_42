@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   draft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:35:19 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/17 00:13:42 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/17 00:18:45 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,51 +23,49 @@ static char	*ft_edge_case(void)
     return (str);
 }
 
-char	*ft_strtrim(char const *s1, const char *set)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
+    size_t	len_s;
     char	*str;
-    size_t	start;
-    size_t	end;
-    size_t	len_s1;
 
-    if (!s1)
+    if (!s)
         return (NULL);
-    if (!set)
-        return (ft_strdup(s1));
-    len_s1 = ft_strlen(s1);
-    if (len_s1 == 0)
+    len_s = ft_strlen(s);
+    if (start >= len_s)
         return (ft_edge_case());
-    start = 0;
-    while (s1[start] && ft_strchr(set, s1[start]))
-        start++;
-    if (start == len_s1)
-        return (ft_edge_case());
-    end = len_s1 - 1;
-    while (end > start && ft_strchr(set, s1[end]))
-        end--;
-    str = malloc(end - start + 2);
+    if (len + start > len_s)
+        len = len_s - start;
+    str = malloc(len + 1);
     if (!str)
         return (NULL);
-    ft_memcpy(str, s1 + start, end - start + 1);
-    str[end - start + 1] = '\0';
+    ft_memcpy(str, s + start, len);
+    str[len] = '\0';
     return (str);
 }
+//git clone https://github.com/Tripouille/libftTester.git tripo
+//git clone https://github.com/Tripouille/libftTester.git tripo
+//git clone https://github.com/Tripouille/libftTester.git tripo
+
 
 // #include <stdio.h>
 // int main(void)
 // {
+// 	char *s;
 // 	char *r;
-// 	r = ft_strtrim("  Hello world  ", " ");
+// 	s = "Hello, world";
+// 	r = ft_substr(s, 0, 5);
 // 	printf("result=\"%s\"\n", r);
 // 	free(r);
-// 	r = ft_strtrim("xxxHelloxxx", "x");
+// 	
+// 	r = ft_substr(s, 15, 5);
 // 	printf("result=\"%s\"\n", r);
 // 	free(r);
-// 	r = ft_strtrim("", "x");
+// 	
+// 	r = ft_substr(s, 7, 100);
 // 	printf("result=\"%s\"\n", r);
 // 	free(r);
-// 	r = ft_strtrim("xxxxx", "x");
-// 	printf("result=\"%s\"\n", r);
-// 	free(r);
+// 	
+// 	r = ft_substr(NULL, 0, 5);
+// 	printf("result=%p\n", (void*)r);
 // 	return (0);
 // }

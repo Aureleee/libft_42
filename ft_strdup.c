@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:13:03 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/13 22:18:21 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/16 21:51:42 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,12 @@ char	*ft_strdup(const char *s1)
 	return (sdup);
 }
 
-/*
-// test main for ft_strdup
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
-{
-	const char *s = "Hello world";
-	char *a = ft_strdup(s);
-	char *b = strdup(s);
-	printf("ft_strdup=\"%s\" | strdup=\"%s\"\n", a, b);
-	free(a); free(b);
-	return 0;
-}
-*/
+// int main(void)
+// {
+// 	const char *s = "Hello world";
+// 	char *a = ft_strdup(s);
+// 	char *b = strdup(s);
+// 	printf("ft_strdup=\"%s\" | strdup=\"%s\"\n", a, b);
+// 	free(a); free(b);
+// 	return (0);
+// }

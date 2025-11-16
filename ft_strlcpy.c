@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:22:02 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/13 11:10:08 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/16 21:53:04 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t src_len;
+	size_t	src_len;
 
 	src_len = ft_strlen(src);
 	if (dstsize == 0)

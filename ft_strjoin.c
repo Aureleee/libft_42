@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:45:52 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/13 22:25:32 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/16 21:52:11 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,16 @@ char	*ft_strjoin(const char *s1, char const *s2)
 	return (join_str);
 }
 
+// #include <string.h>
 
-// test main for ft_strjoin
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-int main(void)
-{
-	const char *a = "Hello";
-	const char *b = "World";
-	char *r = ft_strjoin(a, b);
-	char *exp = malloc(strlen(a) + strlen(b) + 1);
-	strcpy(exp, a); strcat(exp, b);
-	printf("ft_strjoin=\"%s\" | exp=\"%s\"\n", r, exp);
-	free(r); free(exp);
-	return 0;
-}
-
+// int main(void)
+// {
+// 	const char *a = "Hello";
+// 	const char *b = "World";
+// 	char *r = ft_strjoin(a, b);
+// 	char *exp = malloc(strlen(a) + strlen(b) + 1);
+// 	strcpy(exp, a); strcat(exp, b);
+// 	printf("ft_strjoin=\"%s\" | exp=\"%s\"\n", r, exp);
+// 	free(r); free(exp);
+// 	return (0);
+// }
