@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:21:57 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/10 23:49:57 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:32:08 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)s);
 	return (NULL);
 }
