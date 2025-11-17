@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 11:04:11 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/16 21:56:15 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:49:05 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_src;
 	size_t	i;
 
-	/* here size represents the size of the buffer dst (NOT the len)*/
-	/* Thus at maximum we can cat is size - len - 1 (
-		-1 bc we have to nul-terminate dst */
-	/* it have to return len(dest) + len(src) and copy what it cans in dst */
-	/* DST IS NOT A TRUE STRING (it's not necessarely nul teminated) */
 	len_dst = 0;
 	while (len_dst < size && dst[len_dst])
 		len_dst++;
@@ -38,3 +33,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + len_dst] = 0;
 	return (len_src + len_dst);
 }
+
+/* here size represents the size of the buffer dst (NOT the len)*/
+/* Thus at maximum we can cat is size - len - 1 (
+	-1 bc we have to nul-terminate dst */
+/* it have to return len(dest) + len(src) and copy what it cans in dst */
+/* DST IS NOT A TRUE STRING (it's not necessarely nul teminated) */

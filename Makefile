@@ -6,7 +6,7 @@
 #    By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 22:00:15 by ahabbard          #+#    #+#              #
-#    Updated: 2025/11/16 22:20:24 by ahabbard         ###   ########.fr        #
+#    Updated: 2025/11/17 23:08:56 by ahabbard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,3 +31,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: all
+.PHONY: all clean fclean re bonus

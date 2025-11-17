@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draft_3.c                                          :+:      :+:    :+:   */
+/*   ft_lsttiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 21:49:17 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/17 21:49:18 by ahabbard         ###   ########.fr       */
+/*   Created: 2025/11/17 21:02:44 by ahabbard          #+#    #+#             */
+/*   Updated: 2025/11/17 22:12:56 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, const char *s2)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	start;
-	size_t	end;
-	char	*substr;
+	t_list	*ptr;
 
-	if (!s1)
-		return (NULL);
-	start = 0;
-	while (s1[start] && ft_strchr(s2, s1[start]))
-		start++;
-	end = ft_strlen(s1);
-	while (s1[end] && ft_strchr(s2, s1[end]))
-		end--;
-	if (start - end > 0)
+	if (!lst || !f)
+		return ;
+	ptr = lst;
+	while (ptr)
 	{
-		substr = malloc(1);
-		if (!substr)
-			return (NULL);
-		return (substr);
+		f(ptr->content);
+		ptr = ptr->next;
 	}
-	substr = ft_substr(s1, start, end);
-	return (substr);
 }

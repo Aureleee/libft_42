@@ -6,7 +6,7 @@
 /*   By: ahabbard <ahabbard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:45:45 by ahabbard          #+#    #+#             */
-/*   Updated: 2025/11/16 21:51:03 by ahabbard         ###   ########.fr       */
+/*   Updated: 2025/11/17 20:48:41 by ahabbard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ char	**ft_split(char const *s, char c)
 	size_t	nwords;
 	char	**str;
 	size_t	i;
+	size_t	index;
 
 	if (!s)
 		return (NULL);
@@ -93,9 +94,10 @@ char	**ft_split(char const *s, char c)
 	if (!str)
 		return (NULL);
 	i = 0;
+	index = 0;
 	while (i < nwords)
 	{
-		str[i] = ft_cpy_index_word(s, c, &i);
+		str[i] = ft_cpy_index_word(s, c, &index);
 		if (!str[i])
 		{
 			ft_free_tab(str, i);
@@ -107,6 +109,7 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
+// #include <stdio.h>
 // void ft_display_tab(const char **src)
 // {
 //     size_t index = 0;
@@ -118,14 +121,14 @@ char	**ft_split(char const *s, char c)
 //         src++;
 //     }
 // }
-// a mettre dans le split (pour lisibilité quand test)
-// //printf("start:\t%ld\tend:\t%ld\n", start, end);
-// //printf("malloced:\t%ld\n", end - start + 1);
-// // printf("%c\n",src[end -1]);
-//
+// // a mettre dans le split (pour lisibilité quand test)
+// // //printf("start:\t%ld\tend:\t%ld\n", start, end);
+// // //printf("malloced:\t%ld\n", end - start + 1);
+// // // printf("%c\n",src[end -1]);   tripouille  42  ", ' '
+// //
 // int main(int ac, char **av)
 // {
-// 	char *word = "   Hello   world  this is   a test  ";
+// 	char *word = "   tripouille  42  ";
 // 	const char *test[] = { "blaaabn lala", "erdeded", "pleasen word", NULL };
 // 	char split = ' ';
 // 	size_t index = 0;
